@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will | Portfólio</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0b0b0d;
+            color: #e8e8e8;
+        }
+
+        header {
+            padding: 40px 20px;
+            text-align: center;
+            background: #111218;
+            border-bottom: 1px solid #1f1f28;
+            position: relative;
+        }
+
+        #lang-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #242633;
+            color: #e8e8e8;
+            border: 1px solid #3a3d4d;
+            padding: 8px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        #lang-btn:hover {
+            background: #303244;
+        }
+
+        h1 { margin: 0; font-size: 32px; }
+        .subtitle { margin: 8px 0 0 0; opacity: .8; }
+
+        section {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            border-left: 4px solid #4e8bff;
+            padding-left: 10px;
+        }
+
+        .embed-container {
+            margin: 20px 0;
+            background: #15161e;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 480px;
+            border: none;
+            border-radius: 6px;
+            background: #000;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            opacity: .6;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <button id="lang-btn">EN</button>
+
+    <h1 id="t-title">Will</h1>
+    <p class="subtitle" id="t-subtitle">
+        Engenheiro de Dados • Analista de BI • Power BI & Modelagem de Dados
+    </p>
+</header>
+
+<section>
+    <h2 id="t-projetos">Projetos Power BI</h2>
+    <p id="t-projetos-desc">
+        Alguns dashboards desenvolvidos em Power BI, incorporados via embed.
+    </p>
+
+    <div class="embed-container">
+        <h3 id="t-dash1">Dashboard de Exemplo 1</h3>
+        <iframe src="https://app.powerbi.com/view?r=EXEMPLO1"></iframe>
+    </div>
+
+    <div class="embed-container">
+        <h3 id="t-dash2">Dashboard de Exemplo 2</h3>
+        <iframe src="https://app.powerbi.com/view?r=EXEMPLO2"></iframe>
+    </div>
+</section>
+
+<section>
+    <h2 id="t-about">Sobre mim</h2>
+    <p id="t-about-desc">
+        Engenheiro de Dados com experiência em pipelines de integração, modelagem de dados,
+        visualização analítica e automação usando Power BI, Python, SQL, Airflow e Azure.
+    </p>
+</section>
+
+<section>
+    <h2 id="t-contact">Contato</h2>
+    <p id="t-email">Email: seuemail@exemplo.com</p>
+    <p id="t-linkedin">LinkedIn: linkedin.com/in/seu-perfil</p>
+</section>
+
+<footer>
+    © 2025 — Will
+</footer>
+
+<script>
+    const texts = {
+        pt: {
+            title: "Will",
+            subtitle: "Engenheiro de Dados • Analista de BI • Power BI & Modelagem de Dados",
+            projetos: "Projetos Power BI",
+            projetosDesc: "Alguns dashboards desenvolvidos em Power BI, incorporados via embed.",
+            dash1: "Dashboard de Exemplo 1",
+            dash2: "Dashboard de Exemplo 2",
+            about: "Sobre mim",
+            aboutDesc:
+                "Engenheiro de Dados com experiência em pipelines de integração, modelagem de dados, visualização analítica e automação usando Power BI, Python, SQL, Airflow e Azure.",
+            contact: "Contato",
+            email: "Email: seuemail@exemplo.com",
+            linkedin: "LinkedIn: linkedin.com/in/seu-perfil"
+        },
+
+        en: {
+            title: "Will",
+            subtitle: "Data Engineer • BI Analyst • Power BI & Data Modeling",
+            projetos: "Power BI Projects",
+            projetosDesc: "Some dashboards developed in Power BI, embedded below.",
+            dash1: "Sample Dashboard 1",
+            dash2: "Sample Dashboard 2",
+            about: "About me",
+            aboutDesc:
+                "Data Engineer experienced in data pipelines, modeling, analytical visualization, and automation using Power BI, Python, SQL, Airflow and Azure.",
+            contact: "Contact",
+            email: "Email: your@email.com",
+            linkedin: "LinkedIn: linkedin.com/in/your-profile"
+        }
+    };
+
+    let currentLang = "pt";
+
+    document.getElementById("lang-btn").addEventListener("click", () => {
+        currentLang = currentLang === "pt" ? "en" : "pt";
+        updateLanguage();
+    });
+
+    function updateLanguage() {
+        const t = texts[currentLang];
+
+        document.getElementById("t-title").innerText = t.title;
+        document.getElementById("t-subtitle").innerText = t.subtitle;
+        document.getElementById("t-projetos").innerText = t.projetos;
+        document.getElementById("t-projetos-desc").innerText = t.projetosDesc;
+        document.getElementById("t-dash1").innerText = t.dash1;
+        document.getElementById("t-dash2").innerText = t.dash2;
+        document.getElementById("t-about").innerText = t.about;
+        document.getElementById("t-about-desc").innerText = t.aboutDesc;
+        document.getElementById("t-contact").innerText = t.contact;
+        document.getElementById("t-email").innerText = t.email;
+        document.getElementById("t-linkedin").innerText = t.linkedin;
+
+        document.getElementById("lang-btn").innerText = currentLang === "pt" ? "EN" : "PT";
+    }
+</script>
+
+</body>
+</html>
