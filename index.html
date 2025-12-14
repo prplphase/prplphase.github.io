@@ -3,77 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will | Portfólio</title>
+    <title>Will | Data Engineering Portfolio</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0b0b0d;
-            color: #e8e8e8;
-        }
-
-        header {
-            padding: 40px 20px;
-            text-align: center;
-            background: #111218;
-            border-bottom: 1px solid #1f1f28;
-            position: relative;
-        }
-
-        #lang-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: #242633;
-            color: #e8e8e8;
-            border: 1px solid #3a3d4d;
-            padding: 8px 14px;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        #lang-btn:hover {
-            background: #303244;
-        }
-
-        h1 { margin: 0; font-size: 32px; }
-        .subtitle { margin: 8px 0 0 0; opacity: .8; }
-
-        section {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        h2 {
-            border-left: 4px solid #4e8bff;
-            padding-left: 10px;
-        }
-
-        .embed-container {
-            margin: 20px 0;
-            background: #15161e;
-            padding: 15px;
-            border-radius: 8px;
-        }
-
-        iframe {
-            width: 100%;
-            height: 480px;
-            border: none;
-            border-radius: 6px;
-            background: #000;
-        }
-
-        footer {
-            margin-top: 60px;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            opacity: .6;
-        }
-    </style>
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -83,39 +16,80 @@
 
     <h1 id="t-title">Will</h1>
     <p class="subtitle" id="t-subtitle">
-        Engenheiro de Dados • Analista de BI • Power BI & Modelagem de Dados
+        Engenharia de Dados aplicada a pipelines, modelagem analítica e consumo de dados
     </p>
 </header>
 
 <section>
-    <h2 id="t-projetos">Projetos Power BI</h2>
-    <p id="t-projetos-desc">
-        Alguns dashboards desenvolvidos em Power BI, incorporados via embed.
+    <h2 id="t-projects">Projetos de Engenharia de Dados</h2>
+    <p id="t-projects-desc">
+        Projetos reais envolvendo ingestão, transformação, modelagem e consumo de dados.
+        Os dashboards representam a camada final de visualização dessas arquiteturas.
     </p>
 
-    <div class="embed-container">
-        <h3 id="t-dash1">Dashboard de Exemplo 1</h3>
+    <div class="project">
+        <h3 id="t-p1-title">Comércio Exterior — Pipeline Analítico</h3>
+
+        <p id="t-p1-desc">
+            Pipeline de dados desenvolvido para análise de exportações e importações,
+            desde a ingestão dos dados brutos até a camada analítica.
+        </p>
+
+        <ul>
+            <li><strong>Fonte:</strong> Dados públicos de comércio exterior</li>
+            <li><strong>Ingestão:</strong> Python + Airflow</li>
+            <li><strong>Transformação:</strong> dbt (bronze → silver → gold)</li>
+            <li><strong>Armazenamento:</strong> PostgreSQL</li>
+            <li><strong>Consumo:</strong> Power BI</li>
+        </ul>
+
+        <p>
+            <a href="https://github.com/prplphase" target="_blank">
+                Ver repositório do projeto
+            </a>
+        </p>
+
         <iframe src="https://app.powerbi.com/view?r=EXEMPLO1"></iframe>
     </div>
+</section>
 
-    <div class="embed-container">
-        <h3 id="t-dash2">Dashboard de Exemplo 2</h3>
-        <iframe src="https://app.powerbi.com/view?r=EXEMPLO2"></iframe>
-    </div>
+<section>
+    <h2 id="t-architecture">Arquitetura</h2>
+    <p id="t-architecture-desc">
+        Os projetos seguem uma arquitetura ELT, com separação clara entre ingestão,
+        transformação e consumo de dados.
+    </p>
+
+    <pre>
+Fonte de Dados
+      ↓
+Ingestão (Python / Airflow)
+      ↓
+Armazenamento (CSV / PostgreSQL)
+      ↓
+Transformação (dbt)
+      ↓
+Camada Analítica
+      ↓
+Consumo (Power BI / Streamlit)
+    </pre>
 </section>
 
 <section>
     <h2 id="t-about">Sobre mim</h2>
     <p id="t-about-desc">
-        Engenheiro de Dados com experiência em pipelines de integração, modelagem de dados,
-        visualização analítica e automação usando Power BI, Python, SQL, Airflow e Azure.
+        Atuo com engenharia de dados aplicada a problemas reais de negócio,
+        desenvolvendo pipelines confiáveis, modelos analíticos e camadas de consumo
+        voltadas à tomada de decisão.
+        Tenho experiência com ambientes corporativos, governança de dados
+        e integração entre múltiplas ferramentas.
     </p>
 </section>
 
 <section>
     <h2 id="t-contact">Contato</h2>
-    <p id="t-email">Email: seuemail@exemplo.com</p>
-    <p id="t-linkedin">LinkedIn: linkedin.com/in/seu-perfil</p>
+    <p>Email: seuemail@exemplo.com</p>
+    <p>LinkedIn: linkedin.com/in/seu-perfil</p>
 </section>
 
 <footer>
@@ -125,33 +99,36 @@
 <script>
     const texts = {
         pt: {
-            title: "Will",
-            subtitle: "Engenheiro de Dados • Analista de BI • Power BI & Modelagem de Dados",
-            projetos: "Projetos Power BI",
-            projetosDesc: "Alguns dashboards desenvolvidos em Power BI, incorporados via embed.",
-            dash1: "Dashboard de Exemplo 1",
-            dash2: "Dashboard de Exemplo 2",
+            subtitle: "Engenharia de Dados aplicada a pipelines, modelagem analítica e consumo de dados",
+            projects: "Projetos de Engenharia de Dados",
+            projectsDesc:
+                "Projetos reais envolvendo ingestão, transformação, modelagem e consumo de dados.",
+            p1Title: "Comércio Exterior — Pipeline Analítico",
+            p1Desc:
+                "Pipeline de dados desenvolvido para análise de exportações e importações, desde a ingestão dos dados brutos até a camada analítica.",
+            architecture: "Arquitetura",
+            architectureDesc:
+                "Os projetos seguem uma arquitetura ELT, com separação clara entre ingestão, transformação e consumo de dados.",
             about: "Sobre mim",
             aboutDesc:
-                "Engenheiro de Dados com experiência em pipelines de integração, modelagem de dados, visualização analítica e automação usando Power BI, Python, SQL, Airflow e Azure.",
-            contact: "Contato",
-            email: "Email: seuemail@exemplo.com",
-            linkedin: "LinkedIn: linkedin.com/in/seu-perfil"
+                "Atuo com engenharia de dados aplicada a problemas reais de negócio, desenvolvendo pipelines confiáveis, modelos analíticos e camadas de consumo voltadas à tomada de decisão.",
+            contact: "Contato"
         },
-
         en: {
-            title: "Will",
-            subtitle: "Data Engineer • BI Analyst • Power BI & Data Modeling",
-            projetos: "Power BI Projects",
-            projetosDesc: "Some dashboards developed in Power BI, embedded below.",
-            dash1: "Sample Dashboard 1",
-            dash2: "Sample Dashboard 2",
+            subtitle: "Data Engineering focused on pipelines, analytical modeling and data consumption",
+            projects: "Data Engineering Projects",
+            projectsDesc:
+                "Real-world projects involving data ingestion, transformation, modeling and consumption.",
+            p1Title: "Foreign Trade — Analytical Pipeline",
+            p1Desc:
+                "Data pipeline developed for export and import analysis, from raw data ingestion to the analytical layer.",
+            architecture: "Architecture",
+            architectureDesc:
+                "Projects follow an ELT architecture with clear separation between ingestion, transformation and consumption.",
             about: "About me",
             aboutDesc:
-                "Data Engineer experienced in data pipelines, modeling, analytical visualization, and automation using Power BI, Python, SQL, Airflow and Azure.",
-            contact: "Contact",
-            email: "Email: your@email.com",
-            linkedin: "LinkedIn: linkedin.com/in/your-profile"
+                "I work with data engineering applied to real business problems, building reliable pipelines, analytical models and data consumption layers.",
+            contact: "Contact"
         }
     };
 
@@ -165,19 +142,19 @@
     function updateLanguage() {
         const t = texts[currentLang];
 
-        document.getElementById("t-title").innerText = t.title;
         document.getElementById("t-subtitle").innerText = t.subtitle;
-        document.getElementById("t-projetos").innerText = t.projetos;
-        document.getElementById("t-projetos-desc").innerText = t.projetosDesc;
-        document.getElementById("t-dash1").innerText = t.dash1;
-        document.getElementById("t-dash2").innerText = t.dash2;
+        document.getElementById("t-projects").innerText = t.projects;
+        document.getElementById("t-projects-desc").innerText = t.projectsDesc;
+        document.getElementById("t-p1-title").innerText = t.p1Title;
+        document.getElementById("t-p1-desc").innerText = t.p1Desc;
+        document.getElementById("t-architecture").innerText = t.architecture;
+        document.getElementById("t-architecture-desc").innerText = t.architectureDesc;
         document.getElementById("t-about").innerText = t.about;
         document.getElementById("t-about-desc").innerText = t.aboutDesc;
         document.getElementById("t-contact").innerText = t.contact;
-        document.getElementById("t-email").innerText = t.email;
-        document.getElementById("t-linkedin").innerText = t.linkedin;
 
-        document.getElementById("lang-btn").innerText = currentLang === "pt" ? "EN" : "PT";
+        document.getElementById("lang-btn").innerText =
+            currentLang === "pt" ? "EN" : "PT";
     }
 </script>
 
