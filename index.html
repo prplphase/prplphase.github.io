@@ -3,160 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will | Data Engineering Portfolio</title>
-
-    <!-- CSS externo -->
+    <title>Wilkerson Carvalho | Engenharia de Dados</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-<header>
-    <button id="lang-btn">EN</button>
+<header class="header">
+    <div class="header-left">
+        <h1>Wilkerson Carvalho</h1>
+        <p class="subtitle" id="t-subtitle">
+            Engenharia de Dados com foco em pipelines analíticos
+        </p>
+    </div>
 
-    <h1 id="t-title">Will</h1>
-    <p class="subtitle" id="t-subtitle">
-        Engenharia de Dados aplicada a pipelines, modelagem analítica e consumo de dados
-    </p>
+    <nav class="nav">
+        <a href="#projects" id="nav-projects">Projetos</a>
+        <a href="#about" id="nav-about">Sobre</a>
+        <a href="#contact" id="nav-contact">Contato</a>
+        <button id="lang-btn" onclick="toggleLanguage()">EN</button>
+    </nav>
 </header>
 
-<section>
-    <h2 id="t-projects">Projetos de Engenharia de Dados</h2>
-    <p id="t-projects-desc">
-        Projetos reais envolvendo ingestão, transformação, modelagem e consumo de dados.
-        Os dashboards representam a camada final de visualização dessas arquiteturas.
-    </p>
+<main>
 
-    <div class="project">
-        <h3 id="t-p1-title">Comércio Exterior — Pipeline Analítico</h3>
+    <!-- SEÇÃO DE PROJETOS -->
+    <section id="projects">
+        <h2 class="section-title" id="t-projects-title">Projetos em Destaque</h2>
+        
+        <div class="project-card">
+            <h3 id="t-nib-title">Nova Indústria Brasil (NIB)</h3>
+            <p id="t-nib-desc">
+                Projeto de engenharia de dados desenvolvido para o monitoramento analítico da política industrial Nova Indústria Brasil.
+            </p>
+            <div class="tech-tags">
+                <span>Power BI</span>
+                <span>Azure</span>
+                <span>Databricks</span>
+                <span>Python</span>
+            </div>
+            <iframe title="Dashboard Nova Indústria Brasil" src="https://bit.ly/nib-missao-2" loading="lazy"></iframe>
+        </div>
 
-        <p id="t-p1-desc">
-            Pipeline de dados desenvolvido para análise de exportações e importações,
-            desde a ingestão dos dados brutos até a camada analítica.
+        <div class="project-card">
+            <h3 id="t-mpe-title">ABDI — Observatório da Micro e Pequena Empresa (MPE )</h3>
+            <p id="t-mpe-desc">
+                Projeto analítico desenvolvido para a ABDI, integrando dados de múltiplas fontes públicas sobre micro e pequenas empresas.
+            </p>
+            <div class="tech-tags">
+                <span>Power BI</span>
+                <span>Azure Synapse</span>
+                <span>SQL</span>
+            </div>
+            <iframe title="Dashboard Observatório MPE" src="https://bit.ly/abdi-mpe" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- SEÇÃO SOBRE -->
+    <section id="about">
+        <h2 class="section-title" id="t-about-title">Sobre Mim</h2>
+        <p class="intro" id="t-about-desc">
+            Engenheiro de Dados com mais de 4 anos de experiência na construção e otimização de pipelines de dados (ETL/ELT ) em ambientes de alta complexidade. Transformo dados brutos em insights estratégicos com soluções escaláveis em Python, SQL e Power BI, com foco em performance, governança e suporte à tomada de decisão.
         </p>
-
-        <ul>
-            <li><strong>Fonte:</strong> Dados públicos de comércio exterior</li>
-            <li><strong>Ingestão:</strong> Python + Airflow</li>
-            <li><strong>Transformação:</strong> dbt (bronze → silver → gold)</li>
-            <li><strong>Armazenamento:</strong> PostgreSQL</li>
-            <li><strong>Consumo:</strong> Power BI</li>
-        </ul>
-
-        <p>
-            <a href="https://github.com/prplphase" target="_blank">
-                Ver repositório do projeto
+        <div class="badges">
+            <a href="https://www.linkedin.com/in/wilkerson-carvalho/" target="_blank">
+                <img src="https://img.shields.io/badge/LinkedIn-Wilkerson-blue?logo=linkedin&logoColor=white" alt="LinkedIn">
             </a>
+            <a href="https://github.com/willcfx" target="_blank">
+                <img src="https://img.shields.io/badge/GitHub-willcfx-black?logo=github&logoColor=white" alt="GitHub">
+            </a>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE HABILIDADES -->
+    <section id="skills">
+        <h2 class="section-title" id="t-skills-title">Habilidades Técnicas</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4 id="t-skills-cloud">Cloud & Big Data</h4>
+                <ul>
+                    <li>Azure (Synapse, Data Factory, Data Lake )</li>
+                    <li>Databricks (Unity Catalog, Notebooks)</li>
+                    <li>Spark, DuckDB</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4 id="t-skills-lang">Linguagens</h4>
+                <ul>
+                    <li>Python (Pandas, PySpark, FastAPI)</li>
+                    <li>SQL (T-SQL, PL/SQL)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4 id="t-skills-bi">BI & Visualização</h4>
+                <ul>
+                    <li>Power BI (DAX, Power Query)</li>
+                    <li>Tableau, Streamlit</li>
+                    <li>Microsoft Fabric</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4 id="t-skills-devops">Orquestração & DevOps</h4>
+                <ul>
+                    <li>Apache Airflow</li>
+                    <li>GitHub Actions (CI/CD)</li>
+                    <li>Docker, Linux</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE CONTATO -->
+    <section id="contact">
+        <h2 class="section-title" id="t-contact-title">Vamos Conversar?</h2>
+        <p class="intro" id="t-contact-desc">
+            Estou aberto a novas oportunidades e colaborações. Se você gostou do meu trabalho ou tem alguma pergunta, entre em contato!
         </p>
+        <a href="mailto:wilkerson-carvarvalho@outlook.com" class="contact-button" id="t-contact-btn">Enviar E-mail</a>
+    </section>
 
-        <iframe src="https://app.powerbi.com/view?r=EXEMPLO1"></iframe>
-    </div>
-</section>
-
-<section>
-    <h2 id="t-architecture">Arquitetura</h2>
-    <p id="t-architecture-desc">
-        Os projetos seguem uma arquitetura ELT, com separação clara entre ingestão,
-        transformação e consumo de dados.
-    </p>
-
-    <pre>
-Fonte de Dados
-      ↓
-Ingestão (Python / Airflow)
-      ↓
-Armazenamento (CSV / PostgreSQL)
-      ↓
-Transformação (dbt)
-      ↓
-Camada Analítica
-      ↓
-Consumo (Power BI / Streamlit)
-    </pre>
-</section>
-
-<section>
-    <h2 id="t-about">Sobre mim</h2>
-    <p id="t-about-desc">
-        Atuo com engenharia de dados aplicada a problemas reais de negócio,
-        desenvolvendo pipelines confiáveis, modelos analíticos e camadas de consumo
-        voltadas à tomada de decisão.
-        Tenho experiência com ambientes corporativos, governança de dados
-        e integração entre múltiplas ferramentas.
-    </p>
-</section>
-
-<section>
-    <h2 id="t-contact">Contato</h2>
-    <p>Email: seuemail@exemplo.com</p>
-    <p>LinkedIn: linkedin.com/in/seu-perfil</p>
-</section>
+</main>
 
 <footer>
-    © 2025 — Will
+    © 2025 — Wilkerson Carvalho
 </footer>
 
-<script>
-    const texts = {
-        pt: {
-            subtitle: "Engenharia de Dados aplicada a pipelines, modelagem analítica e consumo de dados",
-            projects: "Projetos de Engenharia de Dados",
-            projectsDesc:
-                "Projetos reais envolvendo ingestão, transformação, modelagem e consumo de dados.",
-            p1Title: "Comércio Exterior — Pipeline Analítico",
-            p1Desc:
-                "Pipeline de dados desenvolvido para análise de exportações e importações, desde a ingestão dos dados brutos até a camada analítica.",
-            architecture: "Arquitetura",
-            architectureDesc:
-                "Os projetos seguem uma arquitetura ELT, com separação clara entre ingestão, transformação e consumo de dados.",
-            about: "Sobre mim",
-            aboutDesc:
-                "Atuo com engenharia de dados aplicada a problemas reais de negócio, desenvolvendo pipelines confiáveis, modelos analíticos e camadas de consumo voltadas à tomada de decisão.",
-            contact: "Contato"
-        },
-        en: {
-            subtitle: "Data Engineering focused on pipelines, analytical modeling and data consumption",
-            projects: "Data Engineering Projects",
-            projectsDesc:
-                "Real-world projects involving data ingestion, transformation, modeling and consumption.",
-            p1Title: "Foreign Trade — Analytical Pipeline",
-            p1Desc:
-                "Data pipeline developed for export and import analysis, from raw data ingestion to the analytical layer.",
-            architecture: "Architecture",
-            architectureDesc:
-                "Projects follow an ELT architecture with clear separation between ingestion, transformation and consumption.",
-            about: "About me",
-            aboutDesc:
-                "I work with data engineering applied to real business problems, building reliable pipelines, analytical models and data consumption layers.",
-            contact: "Contact"
-        }
-    };
-
-    let currentLang = "pt";
-
-    document.getElementById("lang-btn").addEventListener("click", () => {
-        currentLang = currentLang === "pt" ? "en" : "pt";
-        updateLanguage();
-    });
-
-    function updateLanguage() {
-        const t = texts[currentLang];
-
-        document.getElementById("t-subtitle").innerText = t.subtitle;
-        document.getElementById("t-projects").innerText = t.projects;
-        document.getElementById("t-projects-desc").innerText = t.projectsDesc;
-        document.getElementById("t-p1-title").innerText = t.p1Title;
-        document.getElementById("t-p1-desc").innerText = t.p1Desc;
-        document.getElementById("t-architecture").innerText = t.architecture;
-        document.getElementById("t-architecture-desc").innerText = t.architectureDesc;
-        document.getElementById("t-about").innerText = t.about;
-        document.getElementById("t-about-desc").innerText = t.aboutDesc;
-        document.getElementById("t-contact").innerText = t.contact;
-
-        document.getElementById("lang-btn").innerText =
-            currentLang === "pt" ? "EN" : "PT";
-    }
-</script>
-
+<script src="assets/js/i18n.js"></script>
 </body>
 </html>
