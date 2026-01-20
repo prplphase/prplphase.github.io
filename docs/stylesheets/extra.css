@@ -1,0 +1,29 @@
+/* docs/stylesheets/extra.css */
+
+:root {
+  /* Cor roxa personalizada */
+  --md-primary-fg-color: #6200ee;
+  --md-primary-fg-color--light: #7e3ff2;
+  --md-primary-fg-color--dark: #4a00b4;
+
+  /* Aumenta a largura máxima da área de conteúdo */
+  --md-main-nav-width: 18rem;
+  --md-main-nav-width--off-screen: 18rem;
+}
+
+.md-grid {
+  max-width: 80rem; /* Largura aumentada (padrão é 61rem) */
+}
+
+.section {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+iframe {
+  width: 100%;
+  height: 720px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  margin-top: 1em;
+}

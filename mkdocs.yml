@@ -1,0 +1,46 @@
+# mkdocs.yml (Versão Final e Estável)
+
+site_name: "Wilkerson C."
+site_url: "https://prplphase.github.io/"
+site_author: "Wilkerson Carvalho"
+
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Mudar para modo claro
+      primary: custom
+      accent: light blue
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Mudar para modo escuro
+      primary: custom
+      accent: light blue
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - content.code.copy
+  icon_packs:
+    - fontawesome
+
+# NAVEGAÇÃO DE PÁGINA ÚNICA (COM O NOVO NOME )
+nav:
+  - Perfil: /#perfil
+  - Projetos: /#projetos
+  - Contato: /#contato
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_css:
+  - stylesheets/extra.css
